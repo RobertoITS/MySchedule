@@ -5,7 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -59,11 +58,12 @@ class CalendarActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onItemClick(position: Int, dayText: String?) {
-        if (dayText != ""){
-            val message = "Selected Day " + dayText + " " + monthYearFromDate(selectedDate!!)
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    override fun onItemClick(position: Int, date: LocalDate) {
+        if (date != null){
+            selectedDate = date
+            setMonthView()
         }
+
     }
 
     fun weeklyAction(view: View) {

@@ -28,7 +28,7 @@ class CalendarAdapter(
         else{
             layoutParams.height = parent.height
         }
-        return CalendarViewHolder(view, onItemListener)
+        return CalendarViewHolder(view, onItemListener, days)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -50,12 +50,12 @@ class CalendarAdapter(
         return days?.size!!
     }
 
-    class CalendarViewHolder(itemView: View, private val onItemListener: OnItemListener) :
+    class CalendarViewHolder(itemView: View, private val onItemListener: OnItemListener, private val days: ArrayList<LocalDate?>?) :
         RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val dayOfMonth: TextView = itemView.findViewById(R.id.cellDayText)
         val parentView: View = itemView.findViewById(R.id.parent_view)
         override fun onClick(view: View) {
-            onItemListener.onItemClick(adapterPosition, (dayOfMonth.text as String))
+            onItemListener.onItemClick(adapterPosition, days?.get(adapterPosition)!!)
         }
 
         init {
@@ -64,6 +64,6 @@ class CalendarAdapter(
     }
 
     interface OnItemListener {
-        fun onItemClick(position: Int, dayText: String?)
+        fun onItemClick(position: Int, date: LocalDate)
     }
 }
