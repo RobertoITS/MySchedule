@@ -1,4 +1,4 @@
-package com.example.myschedule
+package com.example.myschedule.monthcalendar.adapter
 
 import android.graphics.Color
 import android.os.Build
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myschedule.R
 import com.example.myschedule.Utils.selectedDate
 import java.time.LocalDate
 

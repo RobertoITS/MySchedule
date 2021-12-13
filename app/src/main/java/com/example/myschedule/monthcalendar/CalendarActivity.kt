@@ -1,4 +1,4 @@
-package com.example.myschedule
+package com.example.myschedule.monthcalendar
 
 import android.content.Intent
 import android.os.Build
@@ -9,9 +9,12 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myschedule.R
 import com.example.myschedule.Utils.daysInMonthArray
 import com.example.myschedule.Utils.monthYearFromDate
 import com.example.myschedule.Utils.selectedDate
+import com.example.myschedule.WeekActivity
+import com.example.myschedule.monthcalendar.adapter.CalendarAdapter
 import java.time.LocalDate
 
 
