@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myschedule.R
-import com.example.myschedule.Utils.daysInMonthArray
-import com.example.myschedule.Utils.monthYearFromDate
-import com.example.myschedule.Utils.selectedDate
-import com.example.myschedule.WeekActivity
+import com.example.myschedule.utils.Utils.daysInMonthArray
+import com.example.myschedule.utils.Utils.monthYearFromDate
+import com.example.myschedule.utils.Utils.selectedDate
+import com.example.myschedule.weekcalendar.WeekActivity
 import com.example.myschedule.monthcalendar.adapter.CalendarAdapter
 import java.time.LocalDate
 

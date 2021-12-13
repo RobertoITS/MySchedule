@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myschedule.R
-import com.example.myschedule.Utils.selectedDate
+import com.example.myschedule.utils.Utils.selectedDate
 import java.time.LocalDate
 
 

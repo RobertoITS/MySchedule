@@ -1,4 +1,4 @@
-package com.example.myschedule
+package com.example.myschedule.utils
 
 import android.annotation.SuppressLint
 import java.time.DayOfWeek
@@ -66,55 +66,4 @@ object Utils {
         }
         return null
     }
-
-//    var selectedDate: LocalDate? = null
-//
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    public fun daysInMonthArray(date: LocalDate): ArrayList<LocalDate?> {
-//        val daysInMonthArray: ArrayList<LocalDate?> = ArrayList()
-//        val yearMonth = YearMonth.from(date)
-//        val daysInMonth: Int = yearMonth.lengthOfMonth()
-//        val firstOfMonth: LocalDate? = selectedDate?.withDayOfMonth(1)
-//        val dayOfWeek: Int = firstOfMonth?.dayOfWeek!!.value
-//        for (i in 1..42){
-//            if (i <= dayOfWeek || i > daysInMonth + dayOfWeek){
-//                daysInMonthArray.add(null)
-//            } else {
-//                daysInMonthArray.add((LocalDate.of(selectedDate!!.year, selectedDate?.month, i - dayOfWeek)))
-//            }
-//        }
-//        return daysInMonthArray
-//    }
-//
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    public fun monthYearFromDate(date: LocalDate): String{
-//        val formatter = DateTimeFormatter.ofPattern("MMM yyy")
-//        return date.format(formatter)
-//    }
-//
-//    //Weeks
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun daysInWeekArray(selectedDate: LocalDate): ArrayList<LocalDate?> {
-//        val days: ArrayList<LocalDate?> = ArrayList()
-//        var current: LocalDate? = sundayForDate(selectedDate)
-//        val endDate: LocalDate? = current?.plusWeeks(1)
-//
-//        while (current?.isBefore(endDate)!!){
-//            days.add(current)
-//            current = current.plusDays(1)
-//        }
-//        return days
-//    }
-//
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    private fun sundayForDate(current: LocalDate): LocalDate? {
-//        val oneWeekAgo: LocalDate = current.minusWeeks(1)
-//        while (current.isAfter(oneWeekAgo)){
-//            if (current.dayOfWeek == DayOfWeek.SUNDAY){
-//                return current
-//            }
-//            current.minusDays(1)
-//        }
-//        return null
-//    }
 }

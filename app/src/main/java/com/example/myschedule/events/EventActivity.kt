@@ -1,4 +1,4 @@
-package com.example.myschedule
+package com.example.myschedule.events
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,11 +7,12 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.myschedule.Utils.formattedDate
-import com.example.myschedule.Utils.formattedTime
-import com.example.myschedule.Utils.selectedDate
-import com.example.myschedule.data.NewEventData
-import com.example.myschedule.database.NewEventDb
+import com.example.myschedule.R
+import com.example.myschedule.utils.Utils.formattedDate
+import com.example.myschedule.utils.Utils.formattedTime
+import com.example.myschedule.utils.Utils.selectedDate
+import com.example.myschedule.database.NewEventData
+import com.example.myschedule.database.AppDataBase
 import java.time.LocalTime
 
 class EventActivity : AppCompatActivity() {
@@ -48,7 +49,9 @@ class EventActivity : AppCompatActivity() {
     //Esta lista se guarda en la bd
     fun saveEventAction(view: View) {
 //        val app = applicationContext as NewEventApp
-        val db: NewEventDb = Room.databaseBuilder(applicationContext, NewEventDb::class.java, "newevent")
+        val db: AppDataBase = Room.databaseBuilder(applicationContext,
+            AppDataBase::class.java,
+            "NewEventData")
             .allowMainThreadQueries()
             .build()
         val eventNameString: String = eventName?.text.toString()

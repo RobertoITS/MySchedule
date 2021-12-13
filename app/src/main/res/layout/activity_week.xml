@@ -4,30 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeekActivity"
+    tools:context=".weekcalendar.WeekActivity"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center">
 
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/previousWeekBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/back"
-            android:textColor="#0B2073"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:backgroundTint="@color/white"
-            android:onClick="previousWeekAction"/>
+            android:backgroundTint="@color/button"
+            android:src="@drawable/back"
+            android:elevation="20dp"/>
 
         <TextView
             android:id="@+id/month"
             android:layout_width="0dp"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="Feb 2021"
@@ -36,30 +36,28 @@
             android:textColor="@color/black"/>
 
 
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/nextWeekBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/forward"
-            android:textColor="#0B2073"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:backgroundTint="@color/white"
-            android:onClick="nextWeekAction"/>
+            android:backgroundTint="@color/button"
+            android:src="@drawable/forward"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/others"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SUN"
-            android:textColor="@color/gray"
+            android:text="Lun"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -67,8 +65,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="MON"
-            android:textColor="@color/gray"
+            android:text="Mar"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -76,8 +74,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TUE"
-            android:textColor="@color/gray"
+            android:text="Mier"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -85,8 +83,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="WED"
-            android:textColor="@color/gray"
+            android:text="Jue"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -94,8 +92,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="THUR"
-            android:textColor="@color/gray"
+            android:text="Vie"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -103,8 +101,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="FRI"
-            android:textColor="@color/gray"
+            android:text="Sáb"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -112,8 +110,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SAT"
-            android:textColor="@color/gray"
+            android:text="Dom"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -126,6 +124,7 @@
         android:layout_weight="1"/>
 
     <Button
+        android:id="@+id/newEventBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Event"
@@ -133,7 +132,6 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:backgroundTint="@color/white"
-        android:onClick="newEventAction"
         android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
